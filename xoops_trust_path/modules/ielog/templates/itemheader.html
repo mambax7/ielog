@@ -1,0 +1,219 @@
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+
+<{strip}>
+<{* TITLE *}>
+<div id="gnn_title">
+	<{$photo.title}>&nbsp;-&nbsp;<{$photo.mycat}>
+	<{if $photo.is_newphoto}>&nbsp;<img src='<{$mod_url}>/images/new.gif' border='0' alt='<{$lang_new}>' title='<{$lang_new}>' /><{/if}>
+	<{if $photo.is_updatedphoto}>&nbsp;<img src='<{$mod_url}>/images/update.gif' border='0' alt='<{$lang_updated}>' title='<{$lang_updated}>' /><{/if}>
+	<{if $photo.is_popularphoto}>&nbsp;<img src='<{$mod_url}>/images/pop.gif' border='0' alt='<{$lang_popular}>' title='<{$lang_popular}>' /><{/if}>
+	<{if $map}><span>&nbsp;[<a href="index.php<{$maplink_option}>"><{$map}></a>]</span><{/if}>
+	<{if $photo.can_edit}><span>[<a href="index.php?page=submit&lid=<{$photo.lid}>"><{$lang_editthisphoto}></a>]</span><{/if}>
+	<span>&nbsp;[&nbsp;<{$photo.hits}>hit&nbsp;]</span>
+</div>
+
+<{* MAIN LIST *}>
+<table class="gn_outer">
+<tr>
+<td class="gn_head"><{$lang_url}></td>
+<td class="gn_head"><{$lang_tel}></td>
+<td class="gn_head"><{$lang_fax}><BR><{$lang_zip}></td>
+<td class="gn_head"><{$lang_other1}>&nbsp;/&nbsp;<{$lang_other3}><BR><{$lang_other2}></td>
+<td class="gn_head"><{$lang_other5}><BR><{$lang_other4}></td>
+<td class="gn_head"><{$lang_other6}><BR><{$lang_other7}></td>
+<td class="gn_head"><{$lang_other8}><BR><{$lang_other10}></td>
+</tr>
+
+<tr>
+<td class="gn_oddleft">
+		<a name='<{$photo.lid}>'></a><{if $photo.url}><{$photo.url}>
+		<{if $photo.is_newphoto}>&nbsp;<img src='<{$mod_url}>/images/new.gif' border='0' alt='<{$lang_new}>' title='<{$lang_new}>' /><{/if}>
+		<{if $photo.is_updatedphoto}>&nbsp;<img src='<{$mod_url}>/images/update.gif' border='0' alt='<{$lang_updated}>' title='<{$lang_updated}>' /><{/if}>
+		<{if $photo.is_popularphoto}>&nbsp;<img src='<{$mod_url}>/images/pop.gif' border='0' alt='<{$lang_popular}>' title='<{$lang_popular}>' /><{/if}>
+		<BR><{else}>-
+		<{if $photo.is_newphoto}>&nbsp;<img src='<{$mod_url}>/images/new.gif' border='0' alt='<{$lang_new}>' title='<{$lang_new}>' /><{/if}>
+		<{if $photo.is_updatedphoto}>&nbsp;<img src='<{$mod_url}>/images/update.gif' border='0' alt='<{$lang_updated}>' title='<{$lang_updated}>' /><{/if}>
+		<{if $photo.is_popularphoto}>&nbsp;<img src='<{$mod_url}>/images/pop.gif' border='0' alt='<{$lang_popular}>' title='<{$lang_popular}>' /><{/if}>
+		<BR><{/if}><{if $photo.address}><{$photo.address}><{else}>-<{/if}>
+</td>
+	<td class="gn_odd"><{if $photo.tel}><{$photo.tel}><{else}>-<{/if}></td>
+	<td class="gn_oddpriceline"><{if $photo.fax}><div id="price"><{$photo.fax}></div><{else}>-<BR><{/if}><{if $photo.fax}><{$photo.zip}><{else}>-<{/if}></td>
+	<td class="gn_odd"><{if $photo.other1}><{$photo.other1}><{else}>-<{/if}>&nbsp;/&nbsp;<{if $photo.other3}><{$photo.other3}><{else}>-<{/if}><BR><{if $photo.other2}><{$photo.other2}><{else}>-<{/if}></td>
+	<td class="gn_odd"><{if $photo.other5}><{$photo.other5}><{else}>-<{/if}><BR><{if $photo.other4}><{$photo.other4}><{else}>-<{/if}></td>
+	<td class="gn_odd"><{if $photo.other6}><{$photo.other6}><{else}>-<{/if}><BR><{if $photo.other7}><{$photo.other7}><{else}>-<{/if}></td>
+	<td class="gn_odd"><{if $photo.other8}><{$photo.other8}><{else}>-<{/if}><BR><{if $photo.other10}><{$photo.other10}><{else}>-<{/if}></td>
+</tr>
+</table>
+
+<table class="widthauto">
+<tr><td>
+<{* FILE1 *}>
+<{if $photo.ext}><div class="gn_file">
+	<{if $photo.img==1}><a href="<{$photo.ahref_photo}>" title="<{$photo.caption}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo}>" alt="<{$photo.caption}>" <{$photo.width_height}> /></a>
+	<{elseif $photo.img==2}><img src="<{$photo.imgsrc_photo}>" alt="<{$photo.caption}>" <{$photo.width_height}> />
+	<{else}><a href="<{$photo.ahref_photo}>" target="_blank"><img src="<{$photo.imgsrc_photo}>" alt="<{$photo.caption}>" /></a><{/if}>
+	<{if $photo.caption}><div class="gn_caption" <{$photo.captionstyle}>><{$photo.caption}></div><{/if}>
+</div><{/if}>
+<{* FILE2 *}>
+<{if $photo.ext1}><div class="gn_file">
+	<{if $photo.img1==1}><a href="<{$photo.ahref_photo1}>" title="<{$photo.caption1}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo1}>" alt="<{$photo.caption1}>" <{$photo.width_height1}> /></a>
+	<{elseif $photo.img1==2}><img src="<{$photo.imgsrc_photo1}>" alt="<{$photo.caption1}>" <{$photo.width_height1}> />
+	<{else}><a href="<{$photo.ahref_photo1}>" target="_blank"><img src="<{$photo.imgsrc_photo1}>" alt="<{$photo.caption1}>" /></a><{/if}>
+	<{if $photo.caption1}><div class="gn_caption" <{$photo.captionstyle1}>><{$photo.caption1}></div><{/if}>
+</div><{/if}>
+<{* FILE3 *}>
+<{if $photo.ext2}><div class="gn_file">
+	<{if $photo.img2==1}><a href="<{$photo.ahref_photo2}>" title="<{$photo.caption2}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo2}>" alt="<{$photo.caption2}>" <{$photo.width_height2}> /></a>
+	<{elseif $photo.img2==2}><img src="<{$photo.imgsrc_photo2}>" alt="<{$photo.caption2}>" <{$photo.width_height2}> />
+	<{else}><a href="<{$photo.ahref_photo2}>" target="_blank"><img src="<{$photo.imgsrc_photo2}>" alt="<{$photo.caption2}>" /></a><{/if}>
+	<{if $photo.caption2}><div class="gn_caption" <{$photo.captionstyle2}>><{$photo.caption2}></div><{/if}>
+</div><{/if}>
+</td></tr></TABLE>
+
+<div style="clear:both;"></div>
+
+<{* ITEM INFORMATIONS *}>
+<div id="gnn_title">
+<{$lang_bukken}>
+</div>
+
+<table>
+<tr><td width=60%>
+		<table class="gn_outer">
+		<tr>
+		<td class="gn_head" colspan=4><{$lang_others}>
+		</td>
+		</tr>
+		<tr>
+		<td class="gn_oddleft" colspan=4>
+			<table class="widthauto">
+			<tr><td>
+			<{* FILE4 *}>
+			<{if $photo.ext3}><div class="gn_file">
+				<{if $photo.img3==1}><a href="<{$photo.ahref_photo3}>" title="<{$photo.caption3}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo3}>" alt="<{$photo.caption3}>" <{$photo.width_height3}> /></a>
+				<{elseif $photo.img3==2}><img src="<{$photo.imgsrc_photo3}>" alt="<{$photo.caption3}>" <{$photo.width_height3}> />
+				<{else}><a href="<{$photo.ahref_photo3}>" target="_blank"><img src="<{$photo.imgsrc_photo3}>" alt="<{$photo.caption3}>" /></a><{/if}>
+				<{if $photo.caption3}><div class="gn_caption" <{$photo.captionstyle3}>><{$photo.caption3}></div><{/if}>
+			</div><{/if}>
+			<{* FILE5 *}>
+			<{if $photo.ext4}><div class="gn_file">
+				<{if $photo.img4==1}><a href="<{$photo.ahref_photo4}>" title="<{$photo.caption4}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo4}>" alt="<{$photo.caption4}>" <{$photo.width_height4}> /></a>
+				<{elseif $photo.img4==2}><img src="<{$photo.imgsrc_photo4}>" alt="<{$photo.caption4}>" <{$photo.width_height4}> />
+				<{else}><a href="<{$photo.ahref_photo4}>" target="_blank"><img src="<{$photo.imgsrc_photo4}>" alt="<{$photo.caption4}>" /></a><{/if}>
+				<{if $photo.caption4}><div class="gn_caption" <{$photo.captionstyle4}>><{$photo.caption4}></div><{/if}>
+			</div><{/if}>
+			<{* FILE6 *}>
+			<{if $photo.ext5}><div class="gn_file">
+				<{if $photo.img5==1}><a href="<{$photo.ahref_photo5}>" title="<{$photo.caption5}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo5}>" alt="<{$photo.caption5}>" <{$photo.width_height5}> /></a>
+				<{elseif $photo.img5==2}><img src="<{$photo.imgsrc_photo5}>" alt="<{$photo.caption5}>" <{$photo.width_height5}> />
+				<{else}><a href="<{$photo.ahref_photo5}>" target="_blank"><img src="<{$photo.imgsrc_photo5}>" alt="<{$photo.caption5}>" /></a><{/if}>
+				<{if $photo.caption5}><div class="gn_caption" <{$photo.captionstyle5}>><{$photo.caption5}></div><{/if}>
+			</div><{/if}>
+			</td></tr><tr><td>
+			<{* FILE6 *}>
+			<{if $photo.ext6}><div class="gn_file">
+				<{if $photo.img6==1}><a href="<{$photo.ahref_photo6}>" title="<{$photo.caption6}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo6}>" alt="<{$photo.caption6}>" <{$photo.width_height6}> /></a>
+				<{elseif $photo.img6==2}><img src="<{$photo.imgsrc_photo6}>" alt="<{$photo.caption6}>" <{$photo.width_height6}> />
+				<{else}><a href="<{$photo.ahref_photo6}>" target="_blank"><img src="<{$photo.imgsrc_photo6}>" alt="<{$photo.caption6}>" /></a><{/if}>
+				<{if $photo.caption6}><div class="gn_caption" <{$photo.captionstyle6}>><{$photo.caption6}></div><{/if}>
+			</div><{/if}>
+			<{* FILE7 *}>
+			<{if $photo.ext7}><div class="gn_file">
+				<{if $photo.img7==1}><a href="<{$photo.ahref_photo7}>" title="<{$photo.caption7}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo7}>" alt="<{$photo.caption7}>" <{$photo.width_height7}> /></a>
+				<{elseif $photo.img7==2}><img src="<{$photo.imgsrc_photo7}>" alt="<{$photo.caption7}>" <{$photo.width_height7}> />
+				<{else}><a href="<{$photo.ahref_photo7}>" target="_blank"><img src="<{$photo.imgsrc_photo7}>" alt="<{$photo.caption7}>" /></a><{/if}>
+				<{if $photo.caption7}><div class="gn_caption" <{$photo.captionstyle7}>><{$photo.caption7}></div><{/if}>
+			</div><{/if}>
+			<{* FILE8 *}>
+			<{if $photo.ext8}><div class="gn_file">
+				<{if $photo.img8==1}><a href="<{$photo.ahref_photo8}>" title="<{$photo.caption8}>" rel="lightbox[]"><img src="<{$photo.imgsrc_photo8}>" alt="<{$photo.caption8}>" <{$photo.width_height8}> /></a>
+				<{elseif $photo.img8==2}><img src="<{$photo.imgsrc_photo8}>" alt="<{$photo.caption8}>" <{$photo.width_height8}> />
+				<{else}><a href="<{$photo.ahref_photo8}>" target="_blank"><img src="<{$photo.imgsrc_photo8}>" alt="<{$photo.caption8}>" /></a><{/if}>
+				<{if $photo.caption8}><div class="gn_caption" <{$photo.captionstyle8}>><{$photo.caption8}></div><{/if}>
+			</div><{/if}>
+			</td></tr></TABLE>
+		</td>
+		</tr>
+		<tr>
+		<td class="gn_head"><{$lang_desc}></td>
+		<td class="gn_oddleft" colspan=3><{if {$photo.description}><{$photo.description}><{else}><{/if}></td>
+		</tr>
+			<tr><td  colspan=4>
+		<table class="gn_outer">
+
+		<tr>
+		<td class="gn_head"><{$lang_other11}></td>
+		<td class="gn_odd"><{if $photo.other11}><{$photo.other11}><{else}>-<{/if}></td>
+		<td class="gn_head"><{$lang_other12}></td>
+		<td class="gn_odd"><{if $photo.other12}><{$photo.other12}><{else}>-<{/if}></td>
+		</tr>
+		<tr>
+		<td class="gn_head"><{$lang_other9}></td>
+		<td class="gn_odd"><{if $photo.other9}><{$photo.other9}><{else}>-<{/if}></td>
+		<td class="gn_head"><{$lang_other14}></td>
+		<td class="gn_odd"><{if $photo.other14}><{$photo.other14}><{else}>-<{/if}></td>
+		</tr>
+		<tr>
+		<td class="gn_head"><{$lang_other16}></td>
+		<td class="gn_odd"><{if $photo.other16}><{$photo.other16}><{else}>-<{/if}></td>
+		<td class="gn_head"><{$lang_other17}></td>
+		<td class="gn_odd"><{if $photo.other17}><{$photo.other17}><{else}>-<{/if}></td>
+		</tr>
+		<tr>
+		<td class="gn_head"><{$lang_other15}></td>
+		<td class="gn_odd"><{if $photo.other15}><{$photo.other15}><{else}>-<{/if}></td>
+		<td class="gn_head"><{$lang_other13}></td>
+		<td class="gn_odd"><{if $photo.other13}><{$photo.other13}><{else}>-<{/if}></td>
+		</tr>
+		</table>
+		
+		</td></tr>
+		<tr>
+		<td class="gn_head"><{$lang_other18}></td>
+		<td class="gn_oddleft" colspan=3><{if {$photo.other18}><{$photo.other18}><{else}>-<{/if}></td>
+		</tr>
+		<{* ITEM PLUS *}>
+		<{foreach from=$photo.addinfo item=addinfo}>
+			<tr><td class="gn_head"><{$addinfo.title}></td><td class="gn_oddleft" colspan=3><{$addinfo.desc}></td></tr>
+		<{/foreach}>
+		<tr>
+		<td class="gn_head"><{$lang_other19}></td>
+		<td class="gn_oddleft" colspan=3><{if {$photo.other19}><{$photo.other19}><{else}>-<{/if}></td>
+		</tr>
+		<tr>
+		<td class="gn_head"><{$lang_other20}></td>
+		<td class="gn_oddleft" colspan=3><{if {$photo.other20}><{$photo.other20}><{else}>-<{/if}></td>
+		</tr>
+		</table>
+</td><td width=40%>
+		<table class="gn_outer">
+		<{* MAP *}>
+			<{if $map}>
+			<tr><td colspan="2" class="gn_head" style="text-align:left;padding-left:10px;"><{$lang_map}>&nbsp;&nbsp;[<a href="kml.php?lid=<{$photo.lid}>">KML</a>]&nbsp;[<a href="index.php<{$maplink_option}>"><{$map}></a>]</td></tr>
+			<tr><td colspan="2" ><div id="map" style="height:320px;"></div></td></tr>
+			<{/if}>
+		<{* QR IMAGE *}>
+		<{if $qrimg}>
+			<tr><td class="gn_head"><{$lng_show_mobile}></td><td class="gn_odd" style="vertical-align:middle;"><img src="<{$qrimg}>"  align="absmiddle"/> 
+			&nbsp;&nbsp;<a href="mailto:?body=<{$mod_url}>/?lid=<{$photo.lid}>"><{$lng_send_mobile}></a></td></tr>
+		<{/if}>
+		<tr><td class="gn_head"><{$lang_opendate}></td><td class="gn_odd"><{$photo.datetime}></td></tr>
+		<{* FROM *}>
+		<form method="POST" action="******mail.cgi">
+		<tr><td class="gn_head" colspan=2 HEIGHT=17><{$lang_askme}></td></tr>
+		<tr><td class="gn_head"><{$lang_postername}></td><td class="gn_odd"><input type="text" size=40 name="<{$lang_postername}>"></td></tr>
+		<tr><td class="gn_head"><{$lang_emailadd}></td><td class="gn_odd"><input type="text" size=40 name="<{$lang_emailadd}>"></td></tr>
+		<tr><td class="gn_head"><{$lang_asktel}></td><td class="gn_odd"><input type="text" size=40 name="<{$lang_asktel}>"></td></tr>
+		<tr><td class="gn_head"><{$lang_iwant}></td><td class="gn_odd"><input type="text" size=40 name="<{$photo.title}> <{$photo.other11}> <{$photo.address}>" value="<{$photo.title}> <{$photo.other11}> <{$photo.address}>"></td></tr>
+		<tr><td class="gn_head"><{$lang_askask}></td><td class="gn_odd"><textarea cols=30 rows=5 name="<{$lang_askask}>"></textarea><BR> <input type="submit" value=" <{$lang_submitmail}> "></form></td></tr>
+		<{* END FROM *}>
+		</table>
+		<{* PRINT *}>
+		<div style="text-align:right;"><span id="gn_print"><a href="index.php<{$link_option}>&page=print"><{$lang_print}></a></span></div>
+</td></tr>
+</table>
+
+<{/strip}>

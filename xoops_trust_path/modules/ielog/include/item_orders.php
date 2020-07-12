@@ -1,0 +1,31 @@
+<?php
+$ielog_orders = array(
+	"lidA" => array( "lid ASC" , _MD_GNAV_ODR_LIDASC ) ,
+	"titleA" => array( "title ASC" , _MD_GNAV_ODR_TITLEATOZ ) ,
+	"dateA" => array( "date ASC" , _MD_GNAV_ODR_DATEOLD ) ,
+	"hitsA" => array( "hits ASC" , _MD_GNAV_ODR_POPULARITYLTOM ) ,
+	"ratingA" => array( "rating ASC" , _MD_GNAV_ODR_RATINGLTOH ) ,
+	"faxA" => array( "fax ASC" , _MD_GNAV_ODR_FAXATOZ ) ,
+	"telA" => array( "tel ASC" , _MD_GNAV_ODR_TELATOZ ) ,
+	"urlA" => array( "url ASC" , _MD_GNAV_ODR_URLATOZ ) ,
+	"addressA" => array( "address ASC" , _MD_GNAV_ODR_ADDRESSATOZ ) ,
+	"other6A" => array( "other6 ASC" , _MD_GNAV_ODR_other6ATOZ ) ,
+	"other7A" => array( "other7 ASC" , _MD_GNAV_ODR_other7ATOZ ) ,
+	"other8A" => array( "other8 ASC" , _MD_GNAV_ODR_other8ATOZ ) ,
+	"other10A" => array( "other10 ASC" , _MD_GNAV_ODR_other10ATOZ ) ,
+	"lidD" => array( "lid DESC" , _MD_GNAV_ODR_LIDDESC ) ,
+	"titleD" => array( "title DESC" , _MD_GNAV_ODR_TITLEZTOA ) ,
+	"dateD" => array( "date DESC" , _MD_GNAV_ODR_DATENEW ) ,
+	"hitsD" => array( "hits DESC" , _MD_GNAV_ODR_POPULARITYMTOL ) ,
+	"ratingD" => array( "rating DESC" , _MD_GNAV_ODR_RATINGHTOL ) ,
+	"faxD" => array( "fax DESC" , _MD_GNAV_ODR_FAXZTOA ) ,
+	"telD" => array( "tel DESC" , _MD_GNAV_ODR_TELZTOA ) ,
+	"urlD" => array( "url DESC" , _MD_GNAV_ODR_URLZTOA ) ,
+	"addressD" => array( "address DESC" , _MD_GNAV_ODR_ADDRESSZTOA ) ,
+	"other6D" => array( "other6 DESC" , _MD_GNAV_ODR_other6ZTOA ) ,
+	"other7D" => array( "other7 DESC" , _MD_GNAV_ODR_other7ZTOA ) ,
+	"other8D" => array( "other8 DESC" , _MD_GNAV_ODR_other8ZTOA ) ,
+	"other10D" => array( "other10 DESC" , _MD_GNAV_ODR_other10ZTOA ) ,
+) ;
+
+?>

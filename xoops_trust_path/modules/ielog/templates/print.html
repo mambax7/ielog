@@ -1,0 +1,181 @@
+<html>
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<{$charset}>" />
+    <title><{$photo.title}></title>
+
+    <style><!--
+		#ptbl td{
+			border-bottom:dotted 1px #ccc;
+		}
+		#ptblm{
+			border:solid 1px #ccc;
+		}
+		.pcaption{
+			font-size:70%;
+			font-weight:bold;
+		}
+		#wrap{
+			width:740px;border:solid 1px #7799ff;padding:10px;text-align:left;
+		}
+    --></style>
+
+	<{$xoops_module_header}>
+
+  </head>
+
+<body>
+<center>
+<{* TITLE *}>
+<div id="wrap">
+
+<{include file="db:`$mydirname`_header.html"}>
+<h1 align="center"><{$photo.title}></h1>
+
+<table id="ptbl" style="width:700px;" align="center">
+
+		<{if $photo.fax}><TR><TD><{$lang_fax}></TD><TD><{$photo.fax}></TD></TR><{/if}>
+		<{if $photo.zip}><TR><TD><{$lang_zip}></TD><TD><{$photo.zip}></TD></TR><{/if}>
+		<{if $photo.fax}><TR><TD><{$lang_url}></TD><TD><{$photo.url}></TD></TR><{/if}>
+		<{if $photo.tel}><TR><TD><{$lang_tel}></TD><TD><{$photo.tel}></TD></TR><{/if}>
+		<{if $photo.address}><TR><TD><{$lang_address}></TD><TD><{$photo.address}></TD></TR><{/if}>
+</table>		
+
+
+
+<{* FILE1 *}>
+<table align="center">
+
+<tr valign="top">
+<{if $photo.ext}><td>
+	<{if $photo.img==1}><img src="<{$photo.imgsrc_photo}>" alt="<{$photo.caption}>" <{$photo.width_height}> />
+	<{elseif $photo.img==2}><img src="<{$photo.imgsrc_photo}>" alt="<{$photo.caption}>" <{$photo.width_height}> />
+	<{else}><img src="<{$photo.imgsrc_photo}>" alt="<{$photo.caption}>" /></a><{/if}>
+	<{if $photo.caption}><div class="pcaption" <{$photo.captionstyle}>><{$photo.caption}></div><{/if}>
+</td><{/if}>
+
+<{* FILE2 *}>
+<{if $photo.ext1}><td>
+	<{if $photo.img1==1}><img src="<{$photo.imgsrc_photo1}>" alt="<{$photo.caption1}>" <{$photo.width_height1}> />
+	<{elseif $photo.img1==2}><img src="<{$photo.imgsrc_photo1}>" alt="<{$photo.caption1}>" <{$photo.width_height1}> />
+	<{else}><img src="<{$photo.imgsrc_photo1}>" alt="<{$photo.caption1}>" /></a><{/if}>
+	<{if $photo.caption1}><div class="pcaption" <{$photo.captionstyle1}>><{$photo.caption1}></div><{/if}>
+</td><{/if}>
+
+<{* FILE3 *}>
+<{if $photo.ext2}><td>
+	<{if $photo.img2==1}><img src="<{$photo.imgsrc_photo2}>" alt="<{$photo.caption2}>" <{$photo.width_height2}> />
+	<{elseif $photo.img2==2}><img src="<{$photo.imgsrc_photo2}>" alt="<{$photo.caption2}>" <{$photo.width_height2}> />
+	<{else}><img src="<{$photo.imgsrc_photo2}>" alt="<{$photo.caption2}>" /><{/if}>
+	<{if $photo.caption2}><div class="pcaption" <{$photo.captionstyle2}>><{$photo.caption2}></div><{/if}>
+</td><{/if}>
+<tr>
+
+<tr valign="top">
+
+<{* FILE4 *}>
+<{if $photo.ext3}><td>
+	<{if $photo.img3==1}><img src="<{$photo.imgsrc_photo3}>" alt="<{$photo.caption3}>" <{$photo.width_height3}> />
+	<{elseif $photo.img3==2}><img src="<{$photo.imgsrc_photo3}>" alt="<{$photo.caption3}>" <{$photo.width_height3}> />
+	<{else}><img src="<{$photo.imgsrc_photo3}>" alt="<{$photo.caption3}>" /><{/if}>
+	<{if $photo.caption3}><div class="pcaption" <{$photo.captionstyle3}>><{$photo.caption3}></div><{/if}>
+</td><{/if}>
+
+<{* FILE5 *}>
+<{if $photo.ext4}><td>
+	<{if $photo.img4==1}><img src="<{$photo.imgsrc_photo4}>" alt="<{$photo.caption4}>" <{$photo.width_height4}> />
+	<{elseif $photo.img4==2}><img src="<{$photo.imgsrc_photo4}>" alt="<{$photo.caption4}>" <{$photo.width_height4}> />
+	<{else}><img src="<{$photo.imgsrc_photo4}>" alt="<{$photo.caption4}>" /><{/if}>
+	<{if $photo.caption4}><div class="pcaption" <{$photo.captionstyle4}>><{$photo.caption4}></div><{/if}>
+</td><{/if}>
+
+
+<{* FILE7 *}>
+<{if $photo.ext5}><td>
+	<{if $photo.img5==1}><img src="<{$photo.imgsrc_photo5}>" alt="<{$photo.caption5}>" <{$photo.width_height5}> />
+	<{elseif $photo.img5==2}><img src="<{$photo.imgsrc_photo5}>" alt="<{$photo.caption5}>" <{$photo.width_height5}> />
+	<{else}><img src="<{$photo.imgsrc_photo5}>" alt="<{$photo.caption5}>" /><{/if}>
+	<{if $photo.caption5}><div class="pcaption" <{$photo.captionstyle5}>><{$photo.caption5}></div><{/if}>
+</td><{/if}>
+</tr>
+
+
+<tr valign="top">
+
+<{* FILE7 *}>
+<{if $photo.ext6}><td>
+	<{if $photo.img6==1}><img src="<{$photo.imgsrc_photo6}>" alt="<{$photo.caption6}>" <{$photo.width_height6}> />
+	<{elseif $photo.img6==2}><img src="<{$photo.imgsrc_photo6}>" alt="<{$photo.caption6}>" <{$photo.width_height6}> />
+	<{else}><img src="<{$photo.imgsrc_photo6}>" alt="<{$photo.caption6}>" /><{/if}>
+	<{if $photo.caption6}><div class="pcaption" <{$photo.captionstyle6}>><{$photo.caption6}></div><{/if}>
+</td><{/if}>
+
+<{* FILE8 *}>
+
+<{if $photo.ext7}><td>
+	<{if $photo.img7==1}><img src="<{$photo.imgsrc_photo7}>" alt="<{$photo.caption7}>" <{$photo.width_height7}> />
+	<{elseif $photo.img7==2}><img src="<{$photo.imgsrc_photo7}>" alt="<{$photo.caption7}>" <{$photo.width_height7}> />
+	<{else}><img src="<{$photo.imgsrc_photo7}>" alt="<{$photo.caption7}>" /><{/if}>
+	<{if $photo.caption7}><div class="pcaption" <{$photo.captionstyle7}>><{$photo.caption7}></div><{/if}>
+</td><{/if}>
+
+<{* FILE9 *}>
+<{if $photo.ext}><td>
+	<{if $photo.img8==1}><img src="<{$photo.imgsrc_photo8}>" alt="<{$photo.caption8}>" <{$photo.width_height8}> />
+	<{elseif $photo.img8==2}><img src="<{$photo.imgsrc_photo8}>" alt="<{$photo.caption8}>" <{$photo.width_height8}> />
+	<{else}><img src="<{$photo.imgsrc_photo8}>" alt="<{$photo.caption8}>" /><{/if}>
+	<{if $photo.caption8}><div class="pcaption" <{$photo.captionstyle8}>><{$photo.caption8}></div><{/if}>
+</td><{/if}>
+</tr>
+
+
+</table>
+
+<{* ITEM INFORMATIONS *}>
+<table id="ptblm" style="width:700px;" cellspacing="2" align="center">
+	<{if $map}>
+		<tr><td style="text-align:left;padding-left:10px;"><strong><{$lang_map}></strong></td></tr>
+		<tr><td><div id="map" style="height:320px;"></div></td></tr>
+	<{/if}>
+</table>
+
+<br />
+
+<{* DESCRIPTION *}>
+<div>
+	<{$photo.description}>
+</div>
+<br />
+<table id="ptbl" style="width:700px;" align="center">
+
+
+		<{if $photo.other1}><TR><TD><{$lang_other1}></TD><TD><{$photo.other1}></A></TD></TR><{/if}>
+		<{if $photo.other2}><TR><TD><{$lang_other2}></TD><TD><{$photo.other2}></A></TD></TR><{/if}>
+		<{if $photo.other3}><TR><TD><{$lang_other3}></TD><TD><{$photo.other3}></A></TD></TR><{/if}>
+		<{if $photo.other4}><TR><TD><{$lang_other4}></TD><TD><{$photo.other4}></A></TD></TR><{/if}>
+		<{if $photo.other5}><TR><TD><{$lang_other5}></TD><TD><{$photo.other5}></A></TD></TR><{/if}>
+		<{if $photo.other6}><TR><TD><{$lang_other6}></TD><TD><{$photo.other6}></A></TD></TR><{/if}>
+		<{if $photo.other7}><TR><TD><{$lang_other7}></TD><TD><{$photo.other7}></A></TD></TR><{/if}>
+		<{if $photo.other8}><TR><TD><{$lang_other8}></TD><TD><{$photo.other8}></A></TD></TR><{/if}>
+		<{if $photo.other9}><TR><TD><{$lang_other9}></TD><TD><{$photo.other9}></A></TD></TR><{/if}>
+		<{if $photo.other10}><TR><TD><{$lang_other10}></TD><TD><{$photo.other10}></A></TD></TR><{/if}>
+		<{if $photo.other11}><TR><TD><{$lang_other11}></TD><TD><{$photo.other11}></A></TD></TR><{/if}>
+		<{if $photo.other12}><TR><TD><{$lang_other12}></TD><TD><{$photo.other12}></A></TD></TR><{/if}>
+		<{if $photo.other13}><TR><TD><{$lang_other13}></TD><TD><{$photo.other13}></A></TD></TR><{/if}>
+		<{if $photo.other14}><TR><TD><{$lang_other14}></TD><TD><{$photo.other14}></A></TD></TR><{/if}>
+		<{if $photo.other15}><TR><TD><{$lang_other15}></TD><TD><{$photo.other15}></A></TD></TR><{/if}>
+		<{if $photo.other16}><TR><TD><{$lang_other16}></TD><TD><{$photo.other16}></A></TD></TR><{/if}>
+		<{if $photo.other17}><TR><TD><{$lang_other17}></TD><TD><{$photo.other17}></A></TD></TR><{/if}>
+		<{if $photo.other18}><TR><TD><{$lang_other18}></TD><TD><{$photo.other18}></A></TD></TR><{/if}>
+		<{if $photo.other19}><TR><TD><{$lang_other19}></TD><TD><{$photo.other19}></A></TD></TR><{/if}>
+		<{if $photo.other20}><TR><TD><{$lang_other20}></TD><TD><{$photo.other20}></A></TD></TR><{/if}>
+		
+		<{foreach from=$photo.addinfo item=addinfo}>
+			<TR><TD><{$addinfo.title}></TD><TD><{$addinfo.desc}></TD></TR>
+		<{/foreach}>
+
+</table>
+
+</div>
+</center>
+</body>
+</html>

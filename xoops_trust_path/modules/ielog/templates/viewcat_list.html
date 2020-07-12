@@ -1,0 +1,87 @@
+<{strip}>
+
+<{* BREADCRUMBS *}>
+<{include file="db:`$mydirname`_inc_breadcrumbs.html"}>
+
+<{* GNAVI HEADER *}>
+<{if $indexpage}>
+	<{include file="db:`$mydirname`_header.html"}>
+<{/if}>
+
+<{* TITLE *}>
+<div id="gnn_title"><{$album_sub_title}><span>(<{$photo_num_total}>)</span></div>
+
+<{* CATEGORY DESCRIPTION *}>
+<{if $category_imgurl}><img src="<{$category_imgurl}>" align="left" title="<{$album_sub_title}>" /><{/if}>
+<{if $category_desc}><div style="margin:0 10px 10px 10px;"><{$category_desc}></div><{/if}>
+
+<{* PAGE NAVIGATION *}>
+<{if !$indexpage}><span id="gnn_up"><a href="<{$mod_url}>/index.php<{if $parent_id}>?cid=<{$parent_id}><{/if}>"><{$lang_movepid}></a></span><{/if}>
+<{if $map}><span id="gnn_map"><a href="index.php<{$maplink_option}>"><{$map}></a></span><{/if}>
+<{if $lang_add_photo}><span id="gnn_edit"><a href="index.php?page=submit<{if $category_id}>&cid=<{$category_id}><{/if}>"><{$lang_add_photo}></a></span><{/if}>
+<{if $am_cat_edit}><span id="gnn_edit"><a href="admin/index.php?page=category"><{$am_cat_edit}></a></span><{/if}>
+
+<br style="clear:both; "/>
+
+<{* CATEGORY NAVIGATION *}>
+<{if count( $subcategories ) > 0 }>
+    <{include file="db:`$mydirname`_categories.html"}>
+<{/if}>
+
+<div style="clear:both;"></div>
+
+<{if $photo_small_sum < 1 }>
+	<{* NO POSTS *}>
+	<div align="center">
+		<{$lang_nomatch}>
+	</div>
+<{else}>
+
+	<{if $photo_small_sum > 1 }>
+
+		<{* PAGE NAVIGATION *}>
+		<div class="gnn_navi" style="margin-bottom:15px;"><{$photonavinfo}>&nbsp;&nbsp;&nbsp;<{$photonav}>&nbsp;&nbsp;&nbsp;<{$lang_cursortedby}></div>
+	<{/if}>
+	
+	<{* MAIN ITEM LIST INDEX *}>
+		<table class="gn_outer" style="margin-top:17px;">
+		<TR><TD class="gn_head">
+				<a href="index.php?orderby=<{if $my_order=='urlD'}>urlA<{else}>urlD<{/if}><{$catlink_option}>"><{$lang_url}><{if $my_order=='urlD'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='urlA'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		<BR>
+				<a href="index.php?orderby=<{if $my_order=='addressD'}>addressA<{else}>addressD<{/if}><{$catlink_option}>"><{$lang_address}><{if $my_order=='addressD'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='addressA'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		</TD><TD class="gn_head">
+				<a href="index.php?orderby=<{if $my_order=='telD'}>telA<{else}>telD<{/if}><{$catlink_option}>"><{$lang_tel}><{if $my_order=='telD'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='telA'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		</TD><TD class="gn_headbulue">
+				<a href="index.php?orderby=<{if $my_order=='faxD'}>faxA<{else}>faxD<{/if}><{$catlink_option}>"><{$lang_fax}><{if $my_order=='faxD'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='faxA'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		<BR><{$lang_zip}></TD><TD class="gn_head"><{$lang_other1}>&nbsp;/&nbsp;<{$lang_other3}><BR><{$lang_other2}></TD><TD class="gn_head">
+				<a href="index.php?orderby=<{if $my_order=='other6D'}>other6A<{else}>other6D<{/if}><{$catlink_option}>"><{$lang_other6}><{if $my_order=='other6D'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='other6A'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		<BR>
+				<a href="index.php?orderby=<{if $my_order=='other7D'}>other7A<{else}>other7D<{/if}><{$catlink_option}>"><{$lang_other7}><{if $my_order=='other7D'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='other7A'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		</TD><TD class="gn_head">
+				<a href="index.php?orderby=<{if $my_order=='other8D'}>other8A<{else}>other8D<{/if}><{$catlink_option}>"><{$lang_other8}><{if $my_order=='other8D'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='other8A'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		<BR>
+				<a href="index.php?orderby=<{if $my_order=='other10D'}>other10A<{else}>other10D<{/if}><{$catlink_option}>"><{$lang_other10}><{if $my_order=='other10D'}>&nbsp;<img src="images/down.gif" /><{elseif $my_order=='other10A'}>&nbsp;<img src="images/up.gif" /><{/if}></a>
+		</TD><TD class="gn_head"><{$lang_readmore}></TD></TR>
+
+	<{* MAIN ITEM LIST *}>
+	<{foreach from=$photos item=photo}>
+	
+		<{include file="db:`$mydirname`_itemrow.html"}>
+
+	<{/foreach}>
+		</table>
+	<{if $photo_small_sum > 1 }>
+		<{* PAGE NAVIGATION *}>
+		<div class="gnn_navi" style="margin-top:15px;"><{$photonavinfo}>&nbsp;&nbsp;&nbsp;<{$photonav}></div>
+	<{/if}>
+
+<{/if}>
+
+
+<{* NOTIFICATION *}>
+<{include file='db:system_notification_select.html'}>
+
+<{* GNAVI FOOTER *}>
+<{include file="db:`$mydirname`_footer.html"}>
+
+<{/strip}>

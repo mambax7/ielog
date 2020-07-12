@@ -1,0 +1,56 @@
+<{strip}>
+
+	<{* TITLE *}>
+	<tr><td class="gn_oddleft">
+
+		
+		<a name='<{$photo.lid}>'></a><a href='<{$mod_url}>/index.php?lid=<{$photo.lid}><{if $category_id}>&cid=<{$category_id}><{/if}>'><{if $photo.url}><{$photo.url}>
+		
+		<{if $photo.is_newphoto}>&nbsp;<img src='<{$mod_url}>/images/new.gif' border='0' alt='<{$lang_new}>' title='<{$lang_new}>' /><{/if}>
+		<{if $photo.is_updatedphoto}>&nbsp;<img src='<{$mod_url}>/images/update.gif' border='0' alt='<{$lang_updated}>' title='<{$lang_updated}>' /><{/if}>
+		<{if $photo.is_popularphoto}>&nbsp;<img src='<{$mod_url}>/images/pop.gif' border='0' alt='<{$lang_popular}>' title='<{$lang_popular}>' /><{/if}>
+		<BR><{else}>-
+		
+		<{if $photo.is_newphoto}>&nbsp;<img src='<{$mod_url}>/images/new.gif' border='0' alt='<{$lang_new}>' title='<{$lang_new}>' /><{/if}>
+		<{if $photo.is_updatedphoto}>&nbsp;<img src='<{$mod_url}>/images/update.gif' border='0' alt='<{$lang_updated}>' title='<{$lang_updated}>' /><{/if}>
+		<{if $photo.is_popularphoto}>&nbsp;<img src='<{$mod_url}>/images/pop.gif' border='0' alt='<{$lang_popular}>' title='<{$lang_popular}>' /><{/if}>
+		<BR><{/if}><{if $photo.address}><{$photo.address}><{else}>-<{/if}></a>
+
+	</td>
+
+	<{* ITEM INFORMATIONS *}>
+
+	<td class="gn_odd"><{if $photo.tel}><{$photo.tel}><{else}>-<{/if}></td>
+	<td class="gn_oddpriceline"><{if $photo.fax}><div id="price"><{$photo.fax}></div><{else}>-<BR><{/if}><{if $photo.fax}><{$photo.zip}><{else}>-<{/if}></td>
+	<td class="gn_odd"><{if $photo.other1}><{$photo.other1}><{else}>-<{/if}>&nbsp;/&nbsp;<{if $photo.other3}><{$photo.other3}><{else}>-<{/if}><BR><{if $photo.other2}><{$photo.other2}><{else}>-<{/if}></td>
+	<td class="gn_odd"><{if $photo.other6}><{$photo.other6}><{else}>-<{/if}><BR><{if $photo.other7}><{$photo.other7}><{else}>-<{/if}></td>
+	<td class="gn_odd"><{if $photo.other8}><{$photo.other8}><{else}>-<{/if}><BR><{if $photo.other10}><{$photo.other10}><{else}>-<{/if}></td>
+
+	<{* FILE1 THUMNAIL OR ICON *}>
+	<{if $photo.ext}>
+	
+			<td class="gn_odd" style="vertical-align:middle;padding:4px;">
+				<a href='<{$mod_url}>/index.php?lid=<{$photo.lid}><{if $category_id}>&cid=<{$category_id}><{/if}>'>
+					<img src='<{$photo.imgsrc_thumb}>' alt='<{$photo.title}>' />
+				</a>
+	<{* DESCRIPTION *}>
+	<div align="center">
+		<a href='<{$mod_url}>/index.php?lid=<{$photo.lid}><{if $category_id}>&cid=<{$category_id}><{/if}>'><{$lang_readmore}></a><BR>
+				<{if $photo.can_edit}><span>[<a href="index.php?page=submit&lid=<{$photo.lid}>"><{$lang_editthisphoto}></a>]</span><{/if}>
+	</div>
+
+			</td>
+	<{else}>
+	
+	<td class="gn_odd" colspan="2">
+	<{* DESCRIPTION *}>
+	<div align="center">
+		<a href='<{$mod_url}>/index.php?lid=<{$photo.lid}><{if $category_id}>&cid=<{$category_id}><{/if}>'><{$lang_readmore}></a><BR>
+				<{if $photo.can_edit}><span>[<a href="index.php?page=submit&lid=<{$photo.lid}>"><{$lang_editthisphoto}></a>]</span><{/if}>
+	</div>
+	</td>
+	<{/if}>
+
+</tr>
+
+<{/strip}>
